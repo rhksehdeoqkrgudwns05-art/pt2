@@ -1,0 +1,6 @@
+{
+  "name": "홍길동 연구 포트폴리오",
+  "description": "생체신호와 물리모델로 의료 AI의 가능성을 탐구하는 의공학전공 4학년 홍길동의 연구 포트폴리오 웹사이트입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

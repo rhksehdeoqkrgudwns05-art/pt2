@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: #17212B;
+    background-color: #F7F8FA;
+  }
+
+  /* Ensure anchor link target has clear offset under sticky header */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Research Project Card interactive hover:
+   - Moves up by 4px and shows subtle shadow with ~180ms transition
+   - Strictly active only on environments with precise pointer and hover capability
+   - Disabled on touch screens and under prefers-reduced-motion
+*/
+@media (hover: hover) and (pointer: fine) {
+  .project-card-interactive {
+    transition: transform 180ms ease-out, box-shadow 180ms ease-out, border-color 180ms ease-out;
+  }
+
+  .project-card-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px -4px rgba(23, 33, 43, 0.08), 0 6px 12px -4px rgba(23, 33, 43, 0.04);
+    border-color: rgba(40, 85, 217, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-interactive,
+  .project-card-interactive:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
