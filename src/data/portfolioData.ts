@@ -1,4 +1,4 @@
-import { InterestArea, ActivityExperience, ResearchProject } from '../types';
+import { InterestArea, ActivityExperience, PortfolioProject } from '../types';
 
 export const PROFILE_DATA = {
   name: '홍길동',
@@ -58,9 +58,10 @@ export const ACTIVITIES: ActivityExperience[] = [
   }
 ];
 
-export const RESEARCH_PROJECTS: ResearchProject[] = [
+export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'ecg-ssl',
+    projectType: 'research',
     title: '자기지도학습 기반 ECG 표현학습',
     shortDescription: '라벨이 제한된 조건에서 심전도 표현의 전이 가능성 탐구',
     category: '생체신호 AI',
@@ -82,6 +83,7 @@ export const RESEARCH_PROJECTS: ResearchProject[] = [
   },
   {
     id: 'pinn-blood-flow',
+    projectType: 'research',
     title: 'PINN 기반 혈류 모델링',
     shortDescription: '희소한 관측과 물리 제약을 결합한 유동장 추정',
     category: '물리 기반 의료 모델링',
@@ -100,5 +102,27 @@ export const RESEARCH_PROJECTS: ResearchProject[] = [
     ],
     learningsAndLimitations:
       '물리 제약을 추가하는 것만으로 정확성이 보장되지는 않으며, 관측 조건과 경계조건에 따른 한계를 함께 확인해야 한다는 점을 정리했습니다.'
+  },
+  {
+    id: 'study-quiz-helper',
+    projectType: 'web',
+    title: '전공 학습 도우미 & 퀴즈 챌린지',
+    shortDescription:
+      '학습 자료를 정리하고 필요한 개념을 검색하며, 객관식·OX 퀴즈와 해설로 복습하는 개인용 학습 웹앱입니다.',
+    category: '학습 도구 / 웹 프로젝트',
+    role: '요구사항 및 디자인 규칙 정리, AI Studio 생성 결과 검토·수정, 학습 내용·문항 대조, 정답·오답·다시 풀기 검증 및 GitHub·Vercel 배포를 담당했습니다.',
+    purpose:
+      '흩어진 학습 내용을 한곳에서 찾아보고, 문제 풀이 뒤 설명을 다시 확인할 수 있도록 구성했습니다.',
+    features:
+      '학습 본문 편집, 정리된 내용 안에서 검색, 개념 카드, 객관식·OX 퀴즈, 정답 확인과 점수, 해설과 관련 학습 내용 연결.',
+    processAndRole:
+      '요구사항과 디자인 규칙을 정리하고, AI Studio로 생성한 결과를 검토·수정했습니다. 학습 내용과 문항을 대조하고 정답·오답·다시 풀기를 확인했으며 GitHub와 Vercel로 공개했습니다.',
+    scopeAndStorage:
+      '개인 브라우저 저장 방식으로 사용합니다.',
+    liveUrl: 'https://st-sandy-phi.vercel.app/',
+    codeUrl: 'https://github.com/rhksehdeoqkrgudwns05-art/st'
   }
 ];
+
+// Alias for backwards compatibility
+export const RESEARCH_PROJECTS = PORTFOLIO_PROJECTS;
